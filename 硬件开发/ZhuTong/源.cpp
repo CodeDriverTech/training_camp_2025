@@ -1,28 +1,10 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-	int num = 3;
+	int a = 2;
+	int b = 3;
+	int c = a + b * 3;
 	{
-		scanf("%d", &num);
+		printf("%d", c);
 	}
-	if (num % 2 == 1)
-	{
-		printf("ÆæÊı\n");
-	}
-	else;
-	{
-		printf("Å¼Êı\n");
-	}
-	return 0;
-}
-int main()
-{
-	int i = 1;
-	while (i <= 100)
-	{
-		if(i % 2 ==0 )
-		printf("%d " , i);
-		i++;
-	}
-	return 0;
 }
