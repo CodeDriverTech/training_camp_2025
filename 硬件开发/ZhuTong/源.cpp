@@ -1,10 +1,8 @@
 #include<stdio.h>
 int main()
 {
-	int a = 2;
-	int b = 3;
-	int c = a + b * 3;
-	{
-		printf("%d", c);
-	}
+	int ch = getchar();
+	printf("%c\n", ch);
+	putchar(ch);
+	return 0;
 }
