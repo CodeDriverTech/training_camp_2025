@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border: 1px solid #000;
+      text-align: center;
+      width: 300px;
+    }
+
+    th,
+    td {
+      border: 1px solid #000;
+    }
+
+    h3 {
+      position: relative;
+    }
+
+    span {
+      position: absolute;
+      left: 145px;
+      top: -4px;
+      width: 16px;
+      height: 16px;
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #e63f32;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <h3>小黑的礼物清单🛒<span>{{totalCount }}</span></h3>
+    <h3>小黑的礼物清单🛒<span>{{totalCount }}</span></h3>
+    <h3>小黑的礼物清单🛒<span>{{totalCount }}</span></h3>
+    <h3>小黑的礼物清单🛒<span>{{totalCount }}</span></h3>
+    <h3>小黑的礼物清单🛒<span>{{totalCount }}</span></h3>
+    <table>
+      <tr>
+        <th>名字</th>
+        <th>数量</th>
+      </tr>
+      <tr v-for="(item, index) in list" :key="item.id">
+        <td>{{ item.name }}</td>
+        <td>{{ item.num }}个</td>
+      </tr>
+    </table>
+
+    <p>礼物总数：{{ totalCount }} 个</p>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        // 现有的数据
+        list: [
+          { id: 1, name: '篮球', num: 3 },
+          { id: 2, name: '玩具', num: 2 },
+          { id: 3, name: '铅笔', num: 5 },
+        ]
+      },
+
+      methods: {
+        // totalCountfn() {
+        //   console.log('methods计算属性执行了')
+        //   let total = this.list.reduce((sum, item) => sum + item.num, 0)
+        //   return total
+        // }
+      },
+
+      computed: {
+        totalCount() {
+          console.log('计算属性执行了')
+          let total = this.list.reduce((sum, item) => sum + item.num, 0)
+          return total
+        }
+      }
+    })
+    /*
+      computed 计算属性：
+          作用：封装了一段对于数据的处理，求得一个结果。
+          语法：
+           写在 computed 配置项中
+           作为属性，直接使用 → this.计算属性 {{ 计算属性 }}
+              缓存特性（提升性能）：
+                计算属性会对计算出来的结果缓存，再次使用直接读取缓存，
+                依赖项变化了，会自动重新计算 → 并再次缓存
+      ethods 方法：
+        作用：给实例提供一个方法，调用以处理业务逻辑。
+        语法：
+          写在 methods 配置项中
+          作为方法，需要调用 → this.方法名( ) {{ 方法名() }} @事件名="方法名"
+    */
+  </script>
+</body>
+
+</html>

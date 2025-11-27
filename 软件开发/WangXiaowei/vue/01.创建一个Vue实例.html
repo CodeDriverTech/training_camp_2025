@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        创建Vue实例，初始化渲染
+        1.准备容器(Vue所管理的范围)
+        2.引包
+        3.创造实例
+        4.添加配置项 => 完成渲染
+    -->
+
+    <!-- 
+    1. 准备容器
+    2. 引包（官网） — 开发版本/生产版本
+    3. 创建Vue实例 new Vue()
+    4. 指定配置项，渲染数据
+        1. el:指定挂载点,选择器指定控制的是那个盒子
+        2. data提供数据
+        -->
+        <div class="box2">
+          box2 --  {{count}}
+        </div>
+        <div class="box">
+           box -- {{msg}}
+        </div>
+
+
+    <div id="app">
+        <!-- 这里将会编写一些用于渲染的代码逻辑 -->
+        <h1>{{ msg }}</h1>
+        <a href="">{{count}}</a>
+    </div>
+
+    <!-- 引入的是开发完整的包 -包含完整的注释和警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+    <script>
+        //一旦引入 Vuejs核心包，在全局环境，就有了Vue 构造函数
+        const app = new Vue({
+            //通过el配置选择器，指定vue 管理的是那个盒子
+            el: '#app',
+            // 通过data提供数据
+            data: {
+                msg: 'Hello 黑马',
+                count: 666
+            }
+        })
+
+    </script>
+</body>
+
+</html>

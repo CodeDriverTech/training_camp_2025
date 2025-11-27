@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 3px solid #000;
+      font-size: 30px;
+      margin-top: 10px;
+    }
+
+    .pink {
+      background-color: pink;
+    }
+
+    .big {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="box" :class="{pink: true, big:true}">黑马程序员</div>
+    <div class="box" :class="['pink','big']">黑马程序员</div>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+
+      }
+    })
+
+    /*
+      ① 对象 → 键就是类名，值是布尔值。如果值为 true，有这个类，否则没有这个类
+            适用场景：一个类名，来回切换
+      ② 数组 → 数组中所有的类，都会添加到盒子上，本质就是一个 class 列表
+            适用场景：批量添加或删除类
+    */
+  </script>
+</body>
+
+</html>

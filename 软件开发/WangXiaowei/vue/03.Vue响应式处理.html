@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{msg}}
+        {{count}}
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+
+    <script>
+        const app = new Vue({
+            //el用来指定上面的视图容器
+            el: '#app',
+            //data用来存放数据
+            //响应式数据 -> 数据变化了，视图自动更新
+            data: {
+                msg: '你好，黑马',
+                count: 100
+            }
+        })
+
+        //data中的数据，是会被添加到实例上
+        //1、访问数据， 实例.属性名
+        //2、修改数据   实例.属性民 = 新值
+
+        /*
+             什么是响应式呢？
+                数据改变，视图自动更新
+                使用 Vue 开发 → 专注于业务核心逻辑 即可
+            2. 如何访问或修改数据呢？
+                data中的数据, 最终会被添加到实例上
+                ① 访问数据： "实例.属性名"
+                ② 修改数据： "实例.属性名" = "值"
+        */
+    </script>
+</body>
+
+</html>

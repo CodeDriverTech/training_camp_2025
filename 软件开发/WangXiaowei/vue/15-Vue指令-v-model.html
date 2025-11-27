@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <!-- 
+      v-model 可以让数据和视图。形成双向数据绑定
+      数据变化 → 视图自动更新
+      视图变化 → 数据自动更新
+      可以快速获取或设置表单元素的内容
+    -->
+    账户：<input type="text" v-model="username"> <br><br>
+    密码：<input type="password" v-model="password"> <br><br>
+    <button @click="login">登录</button>
+    <button @click="reset">重置</button>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        username: '',
+        password: ''
+      },
+      methods: {
+        login() {
+          console.log(this.username, this.password)
+        },
+        reset() {
+          this.username = ''
+          this.password = ''
+        }
+      }
+    })
+
+    /*
+      1. 作用: 给 表单元素 使用, 双向数据绑定
+        ① 数据变化 → 视图自动更新
+        ② 视图变化 → 数据自动更新
+      2. 语法: v-model = '变量'
+    */
+  </script>
+</body>
+
+</html>

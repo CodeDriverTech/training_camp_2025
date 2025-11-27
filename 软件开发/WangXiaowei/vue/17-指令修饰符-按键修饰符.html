@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h3>@keyup.enter  →  监听键盘回车事件</h3>
+    <input @keyup.enter="fn" v-model="username" type="text">
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        username: ''
+      },
+      methods: {
+        fn(e){
+          // console.log(e)
+          // if(e.key === 'Enter'){
+          //   console.log('键盘回车是触发',this.username)
+          // }
+        }
+      }
+    })
+
+    /*
+      通过 "." 指明一些指令 后缀，不同 后缀 封装了不同的处理操作 → 简化代码
+        1、 按键修饰符
+          @keyup.enter → 键盘回车监听
+        2、v-model修饰符
+          v-model.trim → 去除首尾空格
+          v-model.number → 转数字
+        3、事件修饰符
+          @事件名.stop → 阻止冒泡
+          @事件名.prevent → 阻止默认行为
+    */
+  </script>
+</body>
+</html>

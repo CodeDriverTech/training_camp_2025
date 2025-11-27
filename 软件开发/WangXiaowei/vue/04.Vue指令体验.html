@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-html="msg"> </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                msg: `
+                    <a href="http://www.itheima.com">
+                        黑马程序员
+                    </a>
+                    <h3>nihao</h3>
+
+                `
+            }
+        })
+
+        /*
+            1. 什么是 Vue 指令呢？
+                指令就是带有 v- 前缀 的特殊 属性，不同属性 对应 不同的功能
+                学习不同指令 → 解决不同业务场景需求
+            2. 如果需要动态解析标签，可以用哪个指令？语法？
+                v-html = "表达式 " → 动态设置元素 innerHTML
+        */
+    </script>
+</body>
+
+</html>

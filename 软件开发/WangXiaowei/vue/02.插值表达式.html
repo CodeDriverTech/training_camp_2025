@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    插值表达式是一种 Vue 的模板语法
+    1. 作用: 利用表达式进行插值，渲染到页面中
+    　 表达式：是可以被求值的代码，JS引擎会将其计算出一个结果
+    2. 语法：{{ 表达式 }} 
+
+    3. 注意点：
+        （1）使用的数据必须存在 （data）
+        （2）支持的是表达式，而非语句，     比如：if for ...
+        （3）不能在标签属性中使用 {{ }}     插值
+    -->
+
+    <!-- 
+        插值表达式：Vue的一种模板语法
+        作用：利用表达式进行插值渲染
+        语法：{{语法}}
+
+        注意点：
+            1.使用的数据要存在
+            2.支持的表达式，不是if for
+            3.不能再标签属性中使用 {{}}
+    -->
+
+    <!-- toUpperCase()
+        将小写名称转大写 
+    -->
+    <div id="app">
+        <p>{{nickname}}</p>
+        <p>{{nickname.toUpperCase()}}</p>
+        <p>{{nickname + '你好'}}</p>
+        <p> {{age >= 18 ? '成年' : '未成年'}} </p>
+        <p> {{friend.desc}} </p>
+
+        <!-- --------------------- -->
+         <p> {{hobby}} </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                nickname: 'tony',
+                age: 18,
+                friend: {
+                    name: 'jepson',
+                    desc: '矮小'
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

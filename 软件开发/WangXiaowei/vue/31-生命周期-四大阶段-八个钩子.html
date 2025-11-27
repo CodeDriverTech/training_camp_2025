@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <h3>{{ title }}</h3>
+    <div>
+      <button @click="count--">-</button>
+      <span>{{ count }}</span>
+      <button @click="count++">+</button>
+    </div>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 100,
+        title: '计数器'
+      },
+      // ① 创建（准备数据）
+      beforeCreate() {
+        console.log('准备好之前', this.count)
+      },
+      created() {
+        console.log('准备好之后', this.count)
+
+        //this.数据名 = 请求回来的数据
+        // 可以开始发送初始化渲染的请求了
+      },
+      // ② 挂载 (渲染模板)
+      beforeMount() {
+        console.log('模板渲染之前', document.querySelector('h3').innerHTML)
+      },
+      mounted() {
+        console.log('模板渲染之后', document.querySelector('h3').innerHTML)
+      },
+      //③ 更新阶段
+      beforeUpdate() {
+        console.log('beforeUpdate 数据修改了 视图还没有更新', document.querySelector('span').innerHTML)
+      },
+
+      updated() {
+        console.log('updated 数据修改了 视图更新了', document.querySelector('span').innerHTML)
+      },
+
+      // ④ 卸载阶段
+      beforeDestroy() {
+        console.log('beforeDestroy 卸载前')
+      },
+
+      destroyed() {
+        console.log('destroyed 卸载后')
+        console.log('清除掉一些vue以外的资源占用，定时器，延时器...')
+      }
+
+    })
+
+
+
+    /*
+      Vue生命周期：一个Vue实例从 创建 到 销毁 的整个过程。
+      生命周期四个阶段：① 创建 ② 挂载 ③ 更新 ④ 销毁
+
+      Vue生命周期过程中，会自动运行一些函数，被称为【生命周期钩子】→ 让开发者可以在【特定阶段】运行自己的代码。
+
+    */
+  </script>
+</body>
+
+</html>
