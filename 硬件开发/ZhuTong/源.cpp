@@ -1,28 +1,8 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-	int num = 3;
-	{
-		scanf("%d", &num);
-	}
-	if (num % 2 == 1)
-	{
-		printf("ÆæÊý\n");
-	}
-	else;
-	{
-		printf("Å¼Êý\n");
-	}
-	return 0;
-}
-int main()
-{
-	int i = 1;
-	while (i <= 100)
-	{
-		if(i % 2 ==0 )
-		printf("%d " , i);
-		i++;
-	}
+	int ch = getchar();
+	printf("%c\n", ch);
+	putchar(ch);
 	return 0;
 }
